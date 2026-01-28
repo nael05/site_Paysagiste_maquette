@@ -1,5 +1,5 @@
 /* ==========================================
-   GAUDEFROY ESPACES VERTS - STYLE FINAL (CORRIGÉ MOBILE)
+   GAUDEFROY ESPACES VERTS - STYLE FINAL
    ========================================== */
 
 * {
@@ -57,7 +57,7 @@ nav {
     letter-spacing: -0.5px;
     text-decoration: none;
     text-transform: uppercase;
-    margin-right: auto; /* POUSSE TOUT LE RESTE À DROITE */
+    margin-right: auto; /* POUSSE TOUT LE RESTE À DROITE SUR PC */
 }
 
 .nav-links {
@@ -614,13 +614,17 @@ footer {
         margin-left: 15px;
     }
 
-    /* Le Menu Mobile (caché par défaut) */
+    /* Le Menu Mobile */
     .nav-links {
         display: none; /* Caché */
         position: absolute;
         top: 80px;
         left: 0;
         width: 100%;
+        
+        /* CORRECTION HAUTEUR */
+        height: auto; 
+        
         background: white;
         flex-direction: column;
         align-items: flex-start;
@@ -657,24 +661,23 @@ footer {
         top: 0;
         border: none;
         
-        /* CORRECTIF : FOND BLANC POUR LISIBILITÉ */
+        /* FOND BLANC POUR LISIBILITÉ */
         background: #ffffff !important; 
         
-        /* Indicateur visuel pour le sous-menu */
+        /* Indicateur visuel */
         border-left: 4px solid var(--primary);
         
         padding-left: 0;
-        display: none; /* Caché par défaut */
+        display: none;
         width: 100%;
     }
     
-    /* On affiche les sous-menus au survol ou clic sur mobile */
     .dropdown:hover .dropdown-content {
         display: block;
     }
     
     .dropdown-content a {
-        padding-left: 30px; /* Décalage du texte */
+        padding-left: 30px;
         color: var(--text-gray);
     }
     
@@ -686,7 +689,7 @@ footer {
     .nav-cta {
         padding: 8px 12px;
         font-size: 13px;
-        order: unset; /* Reset de l'ordre desktop */
+        order: unset;
     }
     
     /* Ajustements généraux */
@@ -694,10 +697,6 @@ footer {
     .split-section { grid-template-columns: 1fr; }
     .hero div[style] { flex-direction: column; }
     .contact-container { grid-template-columns: 1fr; }
-    
-    /* Grille 1 colonne sur mobile */
     .services-grid { grid-template-columns: 1fr !important; }
-    
-    /* Animation slider plus rapide sur mobile */
     .reviews-track { animation-duration: 25s; }
 }
