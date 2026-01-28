@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Devis - Gaudefroy Espaces Verts</title>
+    <meta name="description" content="Contactez Gaudefroy Espaces Verts pour un devis gratuit. Paysagiste à Amiens et Salouël. Téléphone : 07 63 42 96 26.">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        
+        /* Bloc Infos (Gauche) */
+        .contact-info {
+            background: var(--cream);
+            padding: 40px;
+            border-radius: 16px;
+            height: fit-content;
+        }
+        .info-item {
+            margin-bottom: 30px;
+        }
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+        .info-item h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Formulaire (Droite) */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background-color: #f9fafb;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: white;
+            box-shadow: 0 0 0 4px var(--primary-light);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(22, 163, 74, 0.2);
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; gap: 40px; }
+            .contact-info { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">GAUDEFROY ESPACES VERTS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="#" style="color: var(--primary);">Nos Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="entretien.html">Entretien & Tonte</a>
+                        <a href="taille.html">Taille de Haies</a>
+                        <a href="elagage.html">Élagage & Abattage</a>
+                        <a href="debroussaillage.html">Débroussaillage</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="tel:0763429626" class="nav-cta">07 63 42 96 26</a>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="section-header">
+            <h1>Contactez-nous</h1>
+            <p>Un projet d'aménagement ? Besoin d'un devis pour de l'entretien ?<br>Romain Gaudefroy vous répond rapidement.</p>
+        </div>
+
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>📍 Adresse Postale</h3>
+                    <p style="font-size: 16px; line-height: 1.6;">
+                        <strong>GAUDEFROY ESPACES VERTS</strong><br>
+                        10 rue Ferdinand Buisson<br>
+                        80480 Salouël
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <h3>📞 Téléphone</h3>
+                    <p style="font-size: 22px; font-weight: 800; color: var(--text-dark);">
+                        <a href="tel:0763429626" style="text-decoration: none; color: inherit;">07 63 42 96 26</a>
+                    </p>
+                    <p style="font-size: 14px; color: var(--text-gray); margin-top: 5px;">Disponible du Lundi au Samedi</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>🚜 Zone d'intervention</h3>
+                    <p>Nous nous déplaçons gratuitement pour les devis sur :</p>
+                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-gray);">
+                        <li>Amiens Métropole</li>
+                        <li>Salouël, Pont-de-Metz, Dury</li>
+                        <li>Boves, Longueau, Camon</li>
+                        <li>Moreuil, Ailly-sur-Noye</li>
+                        <li>Montdidier, Breteuil</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form action="#" method="POST"> <div class="form-group">
+                        <label for="name">Votre Nom & Prénom *</label>
+                        <input type="text" id="name" name="name" required placeholder="Ex: Jean Dupont">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Ex: 06 12 34 56 78">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse Email</label>
+                        <input type="email" id="email" name="email" placeholder="Ex: jean.dupont@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Type de demande *</label>
+                        <select id="service" name="service">
+                            <option value="devis">Demande de Devis Gratuit</option>
+                            <option value="entretien">Entretien / Tonte (Contrat)</option>
+                            <option value="taille">Taille de Haies</option>
+                            <option value="elagage">Élagage / Abattage</option>
+                            <option value="debroussaillage">Débroussaillage</option>
+                            <option value="autre">Autre demande</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin (surface approximative, type de travaux, adresse du chantier...)"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Envoyer ma demande</button>
+                    <p style="font-size: 12px; color: #9ca3af; margin-top: 10px; text-align: center;">* Champs obligatoires. Vos données restent confidentielles.</p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>GAUDEFROY ESPACES VERTS</h4>
+                <p>10 rue Ferdinand Buisson<br>80480 Salouël</p>
+                <p>📞 07 63 42 96 26</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href="index.html">Accueil</a>
+                <a href="entretien.html">Nos Services</a>
+                <a href="mentions-legales.html">Mentions Légales</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Horaires</h4>
+                <p>Lundi - Vendredi : 8h00 - 19h00</p>
+                <p>Samedi : 8h00 - 18h00</p>
+                <p>Dimanche : Fermé</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Gaudefroy Espaces Verts - Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>

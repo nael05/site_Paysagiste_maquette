@@ -1,0 +1,613 @@
+/* ==========================================
+   GAUDEFROY ESPACES VERTS - STYLE COMPLET
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Palette VERTE - Paysagiste */
+    --primary: #16a34a;      /* Vert vif */
+    --primary-dark: #15803d; /* Vert foncé */
+    --primary-light: #dcfce7; /* Vert très clair */
+    
+    --cream: #f0fdf4;        /* Fond teinté vert très léger */
+    --text-dark: #1f2937;
+    --text-gray: #6e6e73;
+    --white: #ffffff;
+    --border: #f3f4f6;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--white);
+    overflow-x: hidden; /* Évite le scroll horizontal involontaire */
+}
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+nav {
+    background: var(--white);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-links li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* --- Menu Déroulant --- */
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    top: 100%; 
+    left: 0;
+    border-radius: 0 0 12px 12px;
+    padding: 10px 0;
+    z-index: 1000;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--primary);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 12px 20px;
+    display: block;
+    font-size: 14px;
+    color: var(--text-dark);
+    width: 100%;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--cream);
+    color: var(--primary);
+}
+
+.nav-cta {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 15px;
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3);
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    background: linear-gradient(135deg, var(--cream) 0%, #dcfce7 100%);
+    padding: 120px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(22,163,74,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(22,163,74,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.badge {
+    display: inline-block;
+    background: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================
+   BOUTONS
+   ========================================== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 16px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(22, 163, 74, 0.3);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary);
+    padding: 16px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    border: 2px solid var(--primary);
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* ==========================================
+   SECTIONS & LAYOUT
+   ========================================== */
+.section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-alt {
+    background: var(--cream);
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 42px;
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.split-content h2 {
+    font-size: 36px;
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.split-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* ==========================================
+   CARTES (SERVICES)
+   ========================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 16px;
+    border: 2px solid var(--border);
+    transition: all 0.3s;
+    overflow: hidden;
+    height: 100%; /* Assure que les cartes ont la même hauteur */
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(22, 163, 74, 0.15);
+}
+
+.service-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 40px;
+    flex-grow: 1; /* Remplit l'espace restant */
+}
+
+.service-content h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.service-content p {
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+.service-content ul, 
+.split-content ul {
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.service-content ul li,
+.split-content ul li {
+    padding: 8px 0;
+    color: var(--text-gray);
+    position: relative;
+    padding-left: 30px;
+}
+
+.service-content ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 18px;
+}
+
+/* ==========================================
+   BANNIÈRE CLASSIQUE (Utilisée pour Crédit Impôt)
+   ========================================== */
+.trust-banner {
+    background-color: #fffbeb;
+    border-bottom: 1px solid #fcd34d;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); 
+}
+
+.trust-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.emoji-stars {
+    font-size: 32px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.trust-quote {
+    font-size: 19px;
+    font-style: italic;
+    color: #374151;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.trust-author {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.verified {
+    color: #16a34a;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   NOUVEAU : RUBAN AVIS DÉFILANT
+   ========================================== */
+.reviews-section {
+    background-color: #fffbeb;
+    border-bottom: 1px solid #fcd34d;
+    padding: 50px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.reviews-header h3 {
+    color: var(--text-dark);
+    font-size: 26px;
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+.google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #4285F4;
+    background: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Conteneur Slider */
+.reviews-slider {
+    width: 100%;
+    position: relative;
+}
+
+/* Piste d'animation */
+.reviews-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+    padding-left: 30px; /* Petit décalage initial */
+}
+
+.reviews-track:hover {
+    animation-play-state: paused;
+}
+
+/* Carte Avis Individuelle */
+.review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    min-width: 320px;
+    max-width: 320px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reviewer-name {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 15px;
+}
+
+.review-stars {
+    color: #fbbf24;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 15px;
+    color: var(--text-gray);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.review-date {
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: right;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 10px;
+}
+
+/* Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-320px * 5 - 30px * 5));
+    }
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+    background: #1f2937;
+    color: white;
+    padding: 60px 20px 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--primary-light);
+}
+
+.footer-section p,
+.footer-section a {
+    color: #d1d5db;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-primary, 
+    .btn-secondary {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .hero div[style] {
+        flex-direction: column;
+    }
+
+    .reviews-track {
+        animation-duration: 25s; /* Plus rapide sur mobile */
+    }
+}

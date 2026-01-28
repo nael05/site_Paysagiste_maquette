@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaudefroy Espaces Verts - Paysagiste Amiens & Salouël</title>
+    <meta name="description" content="Paysagiste à Amiens et Salouël. Romain Gaudefroy réalise l'entretien, la tonte, la taille de haies et l'élagage. 50% de crédit d'impôt immédiat.">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        @media (min-width: 900px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            .service-img {
+                height: 280px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">GAUDEFROY ESPACES VERTS</a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" style="color: var(--primary);">Accueil</a></li>
+                
+                <li class="dropdown">
+                    <a href="#">Nos Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="entretien.html">Entretien & Tonte</a>
+                        <a href="taille.html">Taille de Haies</a>
+                        <a href="elagage.html">Élagage & Abattage</a>
+                        <a href="debroussaillage.html">Débroussaillage</a>
+                    </div>
+                </li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <a href="tel:0763429626" class="nav-cta">07 63 42 96 26</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">Paysagiste à Salouël & Amiens</div>
+            <h1>Vos Espaces Verts<br>Entre de Bonnes Mains</h1>
+            <p>L'entreprise Gaudefroy intervient pour l'entretien et la remise en état de vos jardins dans la Somme. Travail soigné, évacuation des déchets et matériel professionnel.</p>
+            
+            <div style="background: #e6fffa; border: 1px solid #16a34a; padding: 15px; border-radius: 8px; max-width: 500px; margin: 0 auto 30px auto;">
+                <strong style="color: #166534;">💰 Service à la personne</strong> : Bénéficiez de <strong>50% de crédit d'impôt</strong> sur l'entretien courant de votre jardin.
+            </div>
+            
+            <div>
+                <a href="contact.html" class="btn-primary">Devis Gratuit</a>
+                <a href="#services" class="btn-secondary">Voir les prestations</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <div class="reviews-header">
+            <div class="google-badge">
+                <img src="data:image/webp;base64,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" width="18" alt="G">
+                Avis Google
+            </div>
+            <h3>Ce que nos clients pensent de nous</h3>
+        </div>
+
+        <div class="reviews-slider">
+            <div class="reviews-track">
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Hélène L.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Travail impeccable pour la taille de mes haies. L'équipe est ponctuelle, le chantier a été laissé très propre. Je recommande vivement !"</p>
+                    <span class="review-date">Il y a 2 mois</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Marc D.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Très professionnel. J'ai fait appel à Gaudefroy pour l'élagage d'un grand arbre. Sécurité respectée et évacuation totale du bois."</p>
+                    <span class="review-date">Il y a 5 mois</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Sophie V.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Réactif et arrangeant. Le contrat d'entretien à l'année est un vrai confort. Plus besoin de penser à la tonte !"</p>
+                    <span class="review-date">Il y a 1 mois</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Pierre A.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Entreprise sérieuse. Devis rapide et respecté. Le débroussaillage de mon terrain a été fait en une journée."</p>
+                    <span class="review-date">Il y a 6 mois</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Julie M.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Je suis ravie de ma nouvelle clôture. Installation soignée et finitions parfaites. Merci à Romain et son équipe."</p>
+                    <span class="review-date">Il y a 3 semaines</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Hélène L.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Travail impeccable pour la taille de mes haies. L'équipe est ponctuelle, le chantier a été laissé très propre. Je recommande vivement !"</p>
+                    <span class="review-date">Il y a 2 mois</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Marc D.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Très professionnel. J'ai fait appel à Gaudefroy pour l'élagage d'un grand arbre. Sécurité respectée et évacuation totale du bois."</p>
+                    <span class="review-date">Il y a 5 mois</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Sophie V.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Réactif et arrangeant. Le contrat d'entretien à l'année est un vrai confort. Plus besoin de penser à la tonte !"</p>
+                    <span class="review-date">Il y a 1 mois</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Pierre A.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Entreprise sérieuse. Devis rapide et respecté. Le débroussaillage de mon terrain a été fait en une journée."</p>
+                    <span class="review-date">Il y a 6 mois</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Julie M.</span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">"Je suis ravie de ma nouvelle clôture. Installation soignée et finitions parfaites. Merci à Romain et son équipe."</p>
+                    <span class="review-date">Il y a 3 semaines</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="section-header">
+            <h2>Nos Prestations</h2>
+            <p>De l'entretien régulier aux travaux d'abattage complexes, nous avons la solution adaptée.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <a href="entretien.html" style="text-decoration: none; color: inherit;">
+                    <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800&q=80" class="service-img" alt="Tonte de pelouse">
+                    <div class="service-content">
+                        <div class="badge">Crédit d'impôt -50%</div>
+                        <h3>Entretien & Tonte</h3>
+                        <p>Contrats annuels ou ponctuels pour une pelouse impeccable. Tonte, scarification et soins du gazon.</p>
+                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <a href="taille.html" style="text-decoration: none; color: inherit;">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.3qB-ss3xJOwd3Mc8ixElPAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" class="service-img" alt="Taille de haie">
+                    <div class="service-content">
+                        <div class="badge">Service à la personne</div>
+                        <h3>Taille de Haies</h3>
+                        <p>Taille de formation, d'entretien ou rabattage. Nous assurons la coupe et l'évacuation des déchets.</p>
+                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <a href="elagage.html" style="text-decoration: none; color: inherit;">
+                    <img src="https://www.terre-jardins.com/wp-content/uploads/2017/07/elagage-abattage-arbre-var.jpg" class="service-img" alt="Élagage arbre">
+                    <div class="service-content">
+                        <div class="badge">Accès difficile</div>
+                        <h3>Élagage & Abattage</h3>
+                        <p>Intervention en hauteur sécurisée pour élaguer, démonter ou abattre vos arbres, même dangereux.</p>
+                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <a href="debroussaillage.html" style="text-decoration: none; color: inherit;">
+                    <img src="https://blog.equipjardin.com/wp-content/uploads/2024/09/debroussailleuse-thermique.webp" class="service-img" alt="Débroussaillage terrain">
+                    <div class="service-content">
+                        <div class="badge">Gros travaux</div>
+                        <h3>Débroussaillage</h3>
+                        <p>Remise en état de terrains en friche, nettoyage de sous-bois et fauchage d'herbes hautes.</p>
+                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="split-section">
+            <div class="split-content">
+                <h2>Pourquoi choisir Gaudefroy Espaces Verts ?</h2>
+                <p>Installée à <strong>Salouël (80480)</strong>, notre entreprise met son expertise au service des particuliers, entreprises et collectivités de la métropole amiénoise.</p>
+                
+                <p style="margin-top: 15px;">Nous disposons de tout le matériel nécessaire (camion benne, broyeur, rogneuse, tracteur) pour réaliser vos chantiers efficacement, sans que vous n'ayez à gérer l'évacuation des déchets.</p>
+                
+                <ul style="margin-top: 20px;">
+                    <li>Devis gratuit et rapide</li>
+                    <li>Évacuation systématique des déchets verts</li>
+                    <li>Respect de l'environnement (pas de brûlage)</li>
+                    <li>Assurance professionnelle à jour</li>
+                </ul>
+            </div>
+            <div class="split-image">
+                <img src="https://th.bing.com/th/id/R.9eb9e75d90c84a2f6f406d31f19d2a99?rik=JvGa6g8Q5IdQ9g&pid=ImgRaw&r=0" alt="Jardinier professionnel Amiens">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>GAUDEFROY ESPACES VERTS</h4>
+                <p>10 rue Ferdinand Buisson<br>80480 Salouël</p>
+                <p>📞 <a href="tel:0763429626">07 63 42 96 26</a></p>
+                <p>✉️ Formulaire en page contact</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Zone d'Intervention</h4>
+                <p style="font-size: 14px; line-height: 1.6;">
+                    Amiens, Salouël, Boves, Moreuil, Montdidier, Ailly-sur-Noye, Breteuil, Camon, Longueau, Dury...
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href="entretien.html">Entretien & Tonte</a>
+                <a href="taille.html">Taille de Haies</a>
+                <a href="elagage.html">Élagage</a>
+                <a href="contact.html">Contact / Devis</a>
+                <a href="mentions-legales.html">Mentions Légales</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Gaudefroy Espaces Verts - Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>
