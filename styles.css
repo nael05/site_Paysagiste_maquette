@@ -1,5 +1,5 @@
 /* ==========================================
-   GAUDEFROY ESPACES VERTS - STYLE COMPLET
+   GAUDEFROY ESPACES VERTS - STYLE FINAL
    ========================================== */
 
 * {
@@ -26,7 +26,7 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background: var(--white);
-    overflow-x: hidden; /* Évite le scroll horizontal involontaire */
+    overflow-x: hidden; /* Évite le scroll horizontal */
 }
 
 /* ==========================================
@@ -46,8 +46,7 @@ nav {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Vertically centered */
     height: 100%;
 }
 
@@ -58,6 +57,7 @@ nav {
     letter-spacing: -0.5px;
     text-decoration: none;
     text-transform: uppercase;
+    margin-right: auto; /* POUSSE TOUT LE RESTE À DROITE */
 }
 
 .nav-links {
@@ -127,12 +127,13 @@ nav {
 .nav-cta {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white !important;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 8px;
     font-weight: 600;
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
     font-size: 15px;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
 }
 
 .nav-cta:hover {
@@ -318,7 +319,7 @@ nav {
     border: 2px solid var(--border);
     transition: all 0.3s;
     overflow: hidden;
-    height: 100%; /* Assure que les cartes ont la même hauteur */
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -337,7 +338,7 @@ nav {
 
 .service-content {
     padding: 40px;
-    flex-grow: 1; /* Remplit l'espace restant */
+    flex-grow: 1;
 }
 
 .service-content h3 {
@@ -376,7 +377,7 @@ nav {
 }
 
 /* ==========================================
-   BANNIÈRE CLASSIQUE (Utilisée pour Crédit Impôt)
+   BANNIÈRE CLASSIQUE (TRUST)
    ========================================== */
 .trust-banner {
     background-color: #fffbeb;
@@ -421,7 +422,7 @@ nav {
 }
 
 /* ==========================================
-   NOUVEAU : RUBAN AVIS DÉFILANT
+   RUBAN AVIS DÉFILANT
    ========================================== */
 .reviews-section {
     background-color: #fffbeb;
@@ -459,26 +460,23 @@ nav {
     font-size: 14px;
 }
 
-/* Conteneur Slider */
 .reviews-slider {
     width: 100%;
     position: relative;
 }
 
-/* Piste d'animation */
 .reviews-track {
     display: flex;
     gap: 30px;
     width: max-content;
     animation: scroll 40s linear infinite;
-    padding-left: 30px; /* Petit décalage initial */
+    padding-left: 30px;
 }
 
 .reviews-track:hover {
     animation-play-state: paused;
 }
 
-/* Carte Avis Individuelle */
 .review-card {
     background: white;
     border-radius: 12px;
@@ -527,14 +525,9 @@ nav {
     padding-top: 10px;
 }
 
-/* Animation */
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-320px * 5 - 30px * 5));
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-320px * 5 - 30px * 5)); }
 }
 
 /* ==========================================
@@ -582,24 +575,36 @@ footer {
 }
 
 /* ==========================================
-   RESPONSIVE
-   ========================================== */
-/* ==========================================
    RESPONSIVE & MENU MOBILE
    ========================================== */
 .hamburger {
     display: none; /* Caché sur ordinateur */
 }
 
+/* --- VERSION ORDINATEUR (plus de 900px) --- */
+@media (min-width: 900px) {
+    /* Correctif ordre des boutons : Liens avant bouton téléphone */
+    .nav-links {
+        order: 1;
+        margin-right: 30px;
+    }
+    
+    .nav-cta {
+        order: 2;
+    }
+}
+
+/* --- VERSION MOBILE (moins de 900px) --- */
 @media (max-width: 900px) {
-    /* Ajustement du Header */
     .nav-container {
         padding: 0 15px;
+        /* Sur mobile on laisse l'ordre naturel : Logo - Tel - Burger */
     }
 
     .logo {
-        font-size: 18px; /* Logo plus petit sur mobile */
-        flex-grow: 1;
+        font-size: 18px;
+        /* flex-grow: 1; -> Supprimé pour éviter de pousser le tel trop loin */
+        margin-right: auto;
     }
 
     /* Le bouton Burger (3 barres) */
@@ -615,7 +620,7 @@ footer {
     .nav-links {
         display: none; /* Caché */
         position: absolute;
-        top: 80px; /* Juste en dessous de la barre */
+        top: 80px;
         left: 0;
         width: 100%;
         background: white;
@@ -624,6 +629,7 @@ footer {
         padding: 20px 0;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         border-top: 1px solid var(--border);
+        z-index: 2000;
     }
 
     /* La classe qui affiche le menu quand on clique */
@@ -635,6 +641,7 @@ footer {
         width: 100%;
         display: block;
         padding: 0;
+        height: auto;
     }
 
     .nav-links a {
@@ -654,6 +661,7 @@ footer {
         background: #f9fafb;
         padding-left: 20px;
         display: none; /* Caché par défaut */
+        width: 100%;
     }
     
     /* On affiche les sous-menus au survol ou clic sur mobile */
@@ -661,10 +669,10 @@ footer {
         display: block;
     }
 
-    /* Le bouton CTA (Téléphone) */
     .nav-cta {
         padding: 8px 12px;
         font-size: 13px;
+        order: unset; /* Reset de l'ordre desktop */
     }
     
     /* Ajustements généraux */
@@ -675,4 +683,7 @@ footer {
     
     /* Grille 1 colonne sur mobile */
     .services-grid { grid-template-columns: 1fr !important; }
+    
+    /* Animation slider plus rapide sur mobile */
+    .reviews-track { animation-duration: 25s; }
 }
