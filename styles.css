@@ -584,30 +584,95 @@ footer {
 /* ==========================================
    RESPONSIVE
    ========================================== */
-@media (max-width: 768px) {
+/* ==========================================
+   RESPONSIVE & MENU MOBILE
+   ========================================== */
+.hamburger {
+    display: none; /* Caché sur ordinateur */
+}
+
+@media (max-width: 900px) {
+    /* Ajustement du Header */
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 18px; /* Logo plus petit sur mobile */
+        flex-grow: 1;
+    }
+
+    /* Le bouton Burger (3 barres) */
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: var(--primary);
+        margin-left: 15px;
+    }
+
+    /* Le Menu Mobile (caché par défaut) */
     .nav-links {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .split-section {
-        grid-template-columns: 1fr;
-    }
-
-    .btn-primary, 
-    .btn-secondary {
+        display: none; /* Caché */
+        position: absolute;
+        top: 80px; /* Juste en dessous de la barre */
+        left: 0;
         width: 100%;
-        margin-bottom: 10px;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--border);
+    }
+
+    /* La classe qui affiche le menu quand on clique */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        display: block;
+        padding: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 16px;
+        border-bottom: 1px solid #f9fafb;
+        width: 100%;
+    }
+
+    /* Gestion des sous-menus sur mobile */
+    .dropdown-content {
+        position: relative;
+        box-shadow: none;
+        top: 0;
+        border: none;
+        background: #f9fafb;
+        padding-left: 20px;
+        display: none; /* Caché par défaut */
     }
     
-    .hero div[style] {
-        flex-direction: column;
+    /* On affiche les sous-menus au survol ou clic sur mobile */
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
 
-    .reviews-track {
-        animation-duration: 25s; /* Plus rapide sur mobile */
+    /* Le bouton CTA (Téléphone) */
+    .nav-cta {
+        padding: 8px 12px;
+        font-size: 13px;
     }
+    
+    /* Ajustements généraux */
+    .hero h1 { font-size: 32px; }
+    .split-section { grid-template-columns: 1fr; }
+    .hero div[style] { flex-direction: column; }
+    .contact-container { grid-template-columns: 1fr; }
+    
+    /* Grille 1 colonne sur mobile */
+    .services-grid { grid-template-columns: 1fr !important; }
 }
