@@ -16,11 +16,17 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">GAUDEFROY ESPACES VERTS</a>
+            <a href="index.html" class="logo">GAUDEFROY</a>
+            
+            <a href="tel:0763429626" class="nav-cta">📞 07 63 42 96 26</a>
+
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
+                
                 <li class="dropdown">
-                    <a href="#" style="color: var(--primary);">Nos Services ▾</a>
+                    <a href="#">Nos Services ▾</a>
                     <div class="dropdown-content">
                         <a href="entretien.html">Entretien & Tonte</a>
                         <a href="taille.html">Taille de Haies</a>
@@ -28,11 +34,17 @@
                         <a href="debroussaillage.html">Débroussaillage</a>
                     </div>
                 </li>
+                
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <a href="tel:0763429626" class="nav-cta">07 63 42 96 26</a>
         </div>
     </nav>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
 
     <section class="hero">
         <div class="hero-content">
