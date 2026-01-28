@@ -1,5 +1,5 @@
 /* ==========================================
-   GAUDEFROY ESPACES VERTS - STYLE FINAL
+   GAUDEFROY ESPACES VERTS - STYLE FINAL (CORRIGÉ MOBILE)
    ========================================== */
 
 * {
@@ -46,7 +46,7 @@ nav {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    align-items: center; /* Vertically centered */
+    align-items: center;
     height: 100%;
 }
 
@@ -133,7 +133,7 @@ nav {
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
     font-size: 15px;
-    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    white-space: nowrap;
 }
 
 .nav-cta:hover {
@@ -598,12 +598,10 @@ footer {
 @media (max-width: 900px) {
     .nav-container {
         padding: 0 15px;
-        /* Sur mobile on laisse l'ordre naturel : Logo - Tel - Burger */
     }
 
     .logo {
         font-size: 18px;
-        /* flex-grow: 1; -> Supprimé pour éviter de pousser le tel trop loin */
         margin-right: auto;
     }
 
@@ -658,8 +656,14 @@ footer {
         box-shadow: none;
         top: 0;
         border: none;
-        background: #f9fafb;
-        padding-left: 20px;
+        
+        /* CORRECTIF : FOND BLANC POUR LISIBILITÉ */
+        background: #ffffff !important; 
+        
+        /* Indicateur visuel pour le sous-menu */
+        border-left: 4px solid var(--primary);
+        
+        padding-left: 0;
         display: none; /* Caché par défaut */
         width: 100%;
     }
@@ -667,6 +671,16 @@ footer {
     /* On affiche les sous-menus au survol ou clic sur mobile */
     .dropdown:hover .dropdown-content {
         display: block;
+    }
+    
+    .dropdown-content a {
+        padding-left: 30px; /* Décalage du texte */
+        color: var(--text-gray);
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f3f4f6;
+        color: var(--primary);
     }
 
     .nav-cta {
