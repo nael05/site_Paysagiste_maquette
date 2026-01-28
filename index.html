@@ -8,12 +8,27 @@
     <link rel="stylesheet" href="styles.css">
     
     <style>
-        @media (min-width: 900px) {
+        /* TABLETTE : 2 colonnes (On garde la grille classique) */
+        @media (min-width: 700px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
             }
+        }
+
+        @media (min-width: 1100px) {
+            .services-grid {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 32px !important;              
+            }
+
+            .service-card {
+                width: calc(33.33% - 22px) !important; 
+            }
+
             .service-img {
-                height: 280px !important;
+                height: 220px !important;
             }
         }
     </style>
@@ -29,7 +44,7 @@
             <div class="hamburger" onclick="toggleMenu()">☰</div>
             
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" style="color: var(--primary);">Accueil</a></li>
                 
                 <li class="dropdown">
                     <a href="#">Nos Services ▾</a>
@@ -38,6 +53,7 @@
                         <a href="taille.html">Taille de Haies</a>
                         <a href="elagage.html">Élagage & Abattage</a>
                         <a href="debroussaillage.html">Débroussaillage</a>
+                        <a href="autres.html">Autres Services</a>
                     </div>
                 </li>
                 
@@ -45,12 +61,6 @@
             </ul>
         </div>
     </nav>
-
-    <script>
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-    </script>
 
     <section class="hero">
         <div class="hero-content">
@@ -72,7 +82,7 @@
     <section class="reviews-section">
         <div class="reviews-header">
             <div class="google-badge">
-                <img src="data:image/webp;base64,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" width="18" alt="G">
+                <img src="https://logos-world.net/wp-content/uploads/2020/09/Google-Symbol.png" width="18" alt="G">
                 Avis Google
             </div>
             <h3>Ce que nos clients pensent de nous</h3>
@@ -182,6 +192,7 @@
         </div>
 
         <div class="services-grid">
+            
             <div class="service-card">
                 <a href="entretien.html" style="text-decoration: none; color: inherit;">
                     <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800&q=80" class="service-img" alt="Tonte de pelouse">
@@ -196,7 +207,7 @@
 
             <div class="service-card">
                 <a href="taille.html" style="text-decoration: none; color: inherit;">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.3qB-ss3xJOwd3Mc8ixElPAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" class="service-img" alt="Taille de haie">
+                    <img src="https://th.bing.com/th/id/OIP.3c9_0pp6N9c56sTfPEBwywHaE7?w=276&h=184&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3" class="service-img" alt="Taille de haie">
                     <div class="service-content">
                         <div class="badge">Service à la personne</div>
                         <h3>Taille de Haies</h3>
@@ -208,7 +219,7 @@
 
             <div class="service-card">
                 <a href="elagage.html" style="text-decoration: none; color: inherit;">
-                    <img src="https://www.terre-jardins.com/wp-content/uploads/2017/07/elagage-abattage-arbre-var.jpg" class="service-img" alt="Élagage arbre">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.gFpfThsCHjw0JsLffqJG1gHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" class="service-img" alt="Élagage arbre">
                     <div class="service-content">
                         <div class="badge">Accès difficile</div>
                         <h3>Élagage & Abattage</h3>
@@ -220,7 +231,7 @@
 
             <div class="service-card">
                 <a href="debroussaillage.html" style="text-decoration: none; color: inherit;">
-                    <img src="https://blog.equipjardin.com/wp-content/uploads/2024/09/debroussailleuse-thermique.webp" class="service-img" alt="Débroussaillage terrain">
+                    <img src="https://media.wd40.be/app/uploads/2021/10/29165525/SCENE-2.jpg" class="service-img" alt="Débroussaillage terrain">
                     <div class="service-content">
                         <div class="badge">Gros travaux</div>
                         <h3>Débroussaillage</h3>
@@ -229,6 +240,23 @@
                     </div>
                 </a>
             </div>
+
+            <div class="service-card">
+                <a href="autres.html" style="text-decoration: none; color: inherit;">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" class="service-img" alt="Nettoyage et peinture">
+                    <div class="service-content">
+                        <div class="badge">Multiservices</div>
+                        <h3>Autres Services</h3>
+                        <p>Nous nous occupons de vos extérieurs et rénovations :</p>
+                        <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-gray); font-size: 15px;">
+                            <li>Nettoyage Toiture & Terrasse</li>
+                            <li>Peinture Intérieure & Extérieure</li>
+                        </ul>
+                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
+                    </div>
+                </a>
+            </div>
+
         </div>
     </section>
 
@@ -248,7 +276,7 @@
                 </ul>
             </div>
             <div class="split-image">
-                <img src="https://th.bing.com/th/id/R.9eb9e75d90c84a2f6f406d31f19d2a99?rik=JvGa6g8Q5IdQ9g&pid=ImgRaw&r=0" alt="Jardinier professionnel Amiens">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.5QhMneLhJDpzf6U25RISKwHaD5?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Jardinier professionnel Amiens">
             </div>
         </div>
     </section>
@@ -258,23 +286,29 @@
             <div class="footer-section">
                 <h4>GAUDEFROY ESPACES VERTS</h4>
                 <p>10 rue Ferdinand Buisson<br>80480 Salouël</p>
-                <p>📞 <a href="tel:0763429626">07 63 42 96 26</a></p>
-                <p>✉️ Formulaire en page contact</p>
+                <p> <a href="tel:0763429626">📞 07 63 42 96 26</a></p>
+                <p>✉️ <a href="contact.html">Nous contacter</a></p>
             </div>
 
             <div class="footer-section">
                 <h4>Zone d'Intervention</h4>
                 <p style="font-size: 14px; line-height: 1.6;">
-                    Amiens, Salouël, Boves, Moreuil, Montdidier, Ailly-sur-Noye, Breteuil, Camon, Longueau, Dury...
+                    Département de la Somme : Amiens, Salouël, Boves, Moreuil, Montdidier, Ailly-sur-Noye, Breteuil, Camon, Longueau, Dury...
                 </p>
             </div>
             
             <div class="footer-section">
-                <h4>Navigation</h4>
+                <h4>Nos Services</h4>
                 <a href="entretien.html">Entretien & Tonte</a>
                 <a href="taille.html">Taille de Haies</a>
-                <a href="elagage.html">Élagage</a>
-                <a href="contact.html">Contact / Devis</a>
+                <a href="elagage.html">Élagage & Abattage</a>
+                <a href="debroussaillage.html">Débroussaillage</a>
+                <a href="autres.html">Autres Services</a> </div>
+
+            <div class="footer-section">
+                <h4>Informations</h4>
+                <a href="index.html">Accueil</a>
+                <a href="contact.html">Demander un Devis</a>
                 <a href="mentions-legales.html">Mentions Légales</a>
             </div>
         </div>
@@ -282,5 +316,11 @@
             <p>© 2026 Gaudefroy Espaces Verts - Tous droits réservés</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
