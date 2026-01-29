@@ -405,6 +405,9 @@ nav {
     transform: scale(1.30);
 }
 
+.img-focus-just-bottom {
+    object-position: 50% 80%;
+}
 
 
 /* ==========================================
