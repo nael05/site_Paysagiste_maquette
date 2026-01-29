@@ -396,6 +396,17 @@ nav {
     font-size: 18px;
 }
 
+.img-focus-up {
+    object-position: 75% 20%;
+}
+
+.img-focus-bottom {
+    object-position: 50% 100%;
+    transform: scale(1.30);
+}
+
+
+
 /* ==========================================
    BANNIÈRE CLASSIQUE (TRUST)
    ========================================== */
