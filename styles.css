@@ -51,13 +51,33 @@ nav {
 }
 
 .logo {
-    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo span {
+    font-size: 18px;
     font-weight: 800;
     color: var(--primary);
-    letter-spacing: -0.5px;
-    text-decoration: none;
     text-transform: uppercase;
-    margin-right: auto; /* POUSSE TOUT LE RESTE À DROITE SUR PC */
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column; 
+}
+
+@media (max-width: 900px) {
+    .logo img { height: 45px; }
+    .logo span { font-size: 15px; }
 }
 
 .nav-links {
@@ -604,6 +624,7 @@ footer {
         font-size: 18px;
         margin-right: auto;
     }
+    
 
     /* Le bouton Burger (3 barres) */
     .hamburger {
