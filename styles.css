@@ -50,6 +50,11 @@ body {
     color: var(--text-gray);
     background-color: var(--bg-page);
     overflow-x: hidden;
+    padding-bottom: 70px; /* Espace pour la barre mobile */
+}
+
+@media (min-width: 900px) {
+    body { padding-bottom: 0; } /* Pas de padding sur ordi */
 }
 
 h1, h2, h3, h4 {
@@ -61,6 +66,18 @@ h1, h2, h3, h4 {
 
 a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
+/* --- ANIMATION D'APPARITION (FADE IN UP) --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* --- NAVIGATION INTELLIGENTE --- */
 nav {
     background: rgba(255, 255, 255, 0.98);
@@ -69,7 +86,7 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
-    height: 120px; /* Agrandissement à 120px */
+    height: 120px;
     border-bottom: 3px solid var(--accent-gold);
     transition: transform 0.4s ease-in-out;
 }
@@ -90,19 +107,17 @@ nav.nav-hidden {
 
 .logo { display: flex; align-items: center; gap: 20px; }
 
-/* LOGO ENCORE PLUS GRAND */
 .logo img { 
-    height: 100px; /* Passé à 100px */
+    height: 100px; 
     width: auto; 
     border-radius: 50%; 
     object-fit: cover; 
     border: 3px solid var(--primary); 
 }
 
-/* NOM ENCORE PLUS GRAND */
 .logo span { 
     font-family: var(--font-heading); 
-    font-size: 28px; /* Passé à 28px */
+    font-size: 28px; 
     font-weight: 900; 
     color: var(--primary); 
     text-transform: uppercase; 
@@ -124,7 +139,7 @@ nav.nav-hidden {
 /* --- BOUTON RETOUR HAUT --- */
 #backToTop {
     position: fixed;
-    bottom: 30px;
+    bottom: 90px; /* Au dessus de la barre mobile */
     right: 30px;
     background-color: var(--accent-btn);
     color: white;
@@ -148,24 +163,104 @@ nav.nav-hidden {
 #backToTop:hover { background-color: var(--primary); transform: translateY(-5px); }
 #backToTop.show-btn { opacity: 1; visibility: visible; transform: translateY(0); }
 
-/* --- HERO --- */
-.hero { 
-    background: linear-gradient(180deg, #fffaf0 0%, #ffffff 100%); 
-    padding: 200px 20px 100px; /* Augmenté à 200px pour éviter que le menu cache le texte */
-    text-align: center; 
+@media (min-width: 900px) {
+    #backToTop { bottom: 30px; } /* Retour en bas sur ordi */
 }
+
+/* --- BARRE D'ACTION MOBILE (STICKY) --- */
+.mobile-sticky-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.sticky-btn {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-call { background-color: var(--primary); }
+.btn-quote { background-color: var(--accent-warm); }
+
+@media (min-width: 900px) {
+    .mobile-sticky-bar { display: none; } /* Caché sur ordi */
+}
+
+/* --- HERO IMMERSIF AVEC IMAGE DE FOND --- */
+.hero { 
+    /* Image sombre en fond (utiliser une de vos images) */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pictures/haie-coupéé.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Effet Parallaxe */
+    padding: 220px 20px 140px; 
+    text-align: center; 
+    color: white;
+}
+
 .hero-content { max-width: 850px; margin: 0 auto; position: relative; z-index: 1; }
-.badge { display: inline-block; background: #fff9f2; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-warm); margin-bottom: 24px; border: 1px solid var(--accent-glow); }
+
+.hero h1 { 
+    font-size: 3.8rem; 
+    margin-bottom: 24px; 
+    color: #ffffff; /* Texte Blanc */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p { 
+    font-size: 1.4rem; 
+    color: #f3f4f6; /* Blanc cassé */
+    margin-bottom: 40px; 
+    max-width: 700px; 
+    margin-left: auto; 
+    margin-right: auto;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.badge { 
+    display: inline-block; 
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 8px 16px; 
+    border-radius: 6px; 
+    font-size: 13px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: var(--accent-warm); 
+    margin-bottom: 24px; 
+}
+
 .badge-gold { background: #fffdf5; color: #b45309; border-color: var(--accent-gold); }
-.hero-badge-box { background: var(--white); border-left: 5px solid var(--accent-warm); padding: 25px; border-radius: 8px; max-width: 600px; margin: 0 auto 40px auto; box-shadow: var(--shadow-md); color: var(--text-dark); font-size: 1.1rem; text-align: left; border: 1px solid var(--border); }
-.hero h1 { font-size: 3.5rem; margin-bottom: 24px; color: var(--primary); }
-.hero p { font-size: 1.25rem; color: var(--text-gray); margin-bottom: 40px; max-width: 700px; margin: 0 auto; }
+
+.hero-badge-box { 
+    background: rgba(255, 255, 255, 0.95); 
+    border-left: 5px solid var(--accent-warm); 
+    padding: 25px; 
+    border-radius: 8px; 
+    max-width: 600px; 
+    margin: 0 auto 40px auto; 
+    box-shadow: var(--shadow-lg); 
+    color: var(--text-dark); 
+    font-size: 1.1rem; 
+    text-align: left; 
+}
 
 /* --- BOUTONS --- */
 .btn-primary { background: var(--accent-btn); color: white; padding: 18px 36px; border-radius: 50px; font-weight: 700; font-size: 18px; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(193, 136, 69, 0.4); margin: 8px; letter-spacing: 0.5px; }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(193, 136, 69, 0.6); filter: brightness(1.1); }
-.btn-secondary { background: transparent; color: var(--primary); padding: 18px 36px; border-radius: 50px; font-weight: 700; font-size: 18px; border: 2px solid var(--primary); transition: all 0.3s; display: inline-block; margin: 8px; }
-.btn-secondary:hover { background: var(--primary); color: white; box-shadow: var(--shadow-sm); }
+.btn-secondary { background: transparent; color: white; padding: 18px 36px; border-radius: 50px; font-weight: 700; font-size: 18px; border: 2px solid white; transition: all 0.3s; display: inline-block; margin: 8px; }
+.btn-secondary:hover { background: white; color: var(--primary); }
 
 /* --- SECTIONS --- */
 .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
@@ -252,7 +347,6 @@ footer { background: var(--primary-dark); color: #e7e5e4; padding: 80px 20px 30p
     .carousel-track-container { margin: 0; }
     .carousel-btn { width: 35px; height: 35px; font-size: 18px; opacity: 0.9; }
     .prev-btn { left: 5px; } .next-btn { right: 5px; }
-    #backToTop { bottom: 20px; right: 20px; }
 }
 
 /* --- REGLAGES IMAGES --- */
