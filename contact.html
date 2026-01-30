@@ -168,13 +168,19 @@
                         <li>Moreuil, Ailly-sur-Noye</li>
                         <li>Montdidier, Breteuil</li>
                         <li>...</li>
-
                     </ul>
                 </div>
             </div>
 
             <div class="contact-form-wrapper">
-                <form action="#" method="POST"> <div class="form-group">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="43b241f8-ba71-4acb-82ad-f96e4ca20c72">
+                    
+                    <input type="hidden" name="subject" value="Nouveau Devis - Site Web Gaudefroy">
+
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <div class="form-group">
                         <label for="name">Votre Nom & Prénom *</label>
                         <input type="text" id="name" name="name" required placeholder="Ex: Jean Dupont">
                     </div>
@@ -192,12 +198,12 @@
                     <div class="form-group">
                         <label for="service">Type de demande *</label>
                         <select id="service" name="service">
-                            <option value="devis">Demande de Devis Gratuit</option>
-                            <option value="entretien">Entretien / Tonte (Contrat)</option>
-                            <option value="taille">Taille de Haies</option>
-                            <option value="elagage">Élagage / Abattage</option>
-                            <option value="debroussaillage">Débroussaillage</option>
-                            <option value="autre">Autre demande</option>
+                            <option value="Devis Général">Demande de Devis Gratuit</option>
+                            <option value="Entretien/Tonte">Entretien / Tonte (Contrat)</option>
+                            <option value="Taille de Haies">Taille de Haies</option>
+                            <option value="Élagage/Abattage">Élagage / Abattage</option>
+                            <option value="Débroussaillage">Débroussaillage</option>
+                            <option value="Autre">Autre demande</option>
                         </select>
                     </div>
 
@@ -211,7 +217,8 @@
                 </form>
             </div>
 
-        </div> </section>
+        </div> 
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -250,4 +257,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> 
