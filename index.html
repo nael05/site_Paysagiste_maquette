@@ -10,28 +10,59 @@
     <link rel="stylesheet" href="styles.css">
     
     <style>
-        /* TABLETTE : 2 colonnes (On garde la grille classique) */
+        /* --- Styles des listes à puces (Coches Vertes) --- */
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .service-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.4;
+        }
+
+        .service-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* --- Grille Responsive --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile : 1 colonne */
+            gap: 30px;
+        }
+
+        /* TABLETTE : 2 colonnes */
         @media (min-width: 700px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
             }
         }
 
+        /* ORDINATEUR : 3 colonnes */
         @media (min-width: 1100px) {
             .services-grid {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                justify-content: center !important;
-                gap: 32px !important;              
+                grid-template-columns: repeat(3, 1fr) !important;
             }
-
-            .service-card {
-                width: calc(33.33% - 22px) !important; 
-            }
-
             .service-img {
                 height: 220px !important;
             }
+        }
+        
+        /* Empêcher le clic sur les cartes puisqu'il n'y a plus de pages */
+        .service-card {
+            cursor: default;
         }
     </style>
 </head>
@@ -53,18 +84,6 @@
             
             <ul class="nav-links">
                 <li><a href="index.html" style="color: var(--primary);">Accueil</a></li>
-                
-                <li class="dropdown">
-                    <a href="#">Nos Services ▾</a>
-                    <div class="dropdown-content">
-                        <a href="entretien.html">Entretien & Tonte</a>
-                        <a href="taille.html">Taille de Haies</a>
-                        <a href="elagage.html">Élagage & Abattage</a>
-                        <a href="debroussaillage.html">Débroussaillage</a>
-                        <a href="autres.html">Autres Services</a>
-                    </div>
-                </li>
-                
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
@@ -171,24 +190,6 @@
                     <span class="review-date">Il y a 1 mois</span>
                 </div>
 
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="reviewer-name">Pierre A.</span>
-                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <p class="review-text">"Entreprise sérieuse. Devis rapide et respecté. Le débroussaillage de mon terrain a été fait en une journée."</p>
-                    <span class="review-date">Il y a 6 mois</span>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="reviewer-name">Julie M.</span>
-                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <p class="review-text">"Je suis ravie de ma nouvelle clôture. Installation soignée et finitions parfaites. Merci à Romain et son équipe."</p>
-                    <span class="review-date">Il y a 3 semaines</span>
-                </div>
-
             </div>
         </div>
     </section>
@@ -202,70 +203,232 @@
         <div class="services-grid">
             
             <div class="service-card">
-                <a href="entretien.html" style="text-decoration: none; color: inherit;">
-                    <img src="pictures/pelouse-tondue.webp" class="service-img" alt="Tonte de pelouse">
-                    <div class="service-content">
-                        <div class="badge">Crédit d'impôt -50%</div>
-                        <h3>Entretien & Tonte</h3>
-                        <p>Contrats annuels ou ponctuels pour une pelouse impeccable. Tonte, scarification et soins du gazon.</p>
-                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
-                    </div>
-                </a>
+                <img src="pictures/herbe-coupe.webp" class="service-img img-focus-up" alt="Tonte de pelouse professionnelle">
+                <div class="service-content">
+                    <div class="badge">Crédit d'impôt -50%</div>
+                    <h3>Entretien & Tonte</h3>
+                    <ul class="service-list">
+                        <li>Tonte de pelouse (toutes surfaces)</li>
+                        <li>Scarification et aération</li>
+                        <li>Entretien des massifs</li>
+                        <li>Ramassage de feuilles</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="service-card">
-                <a href="taille.html" style="text-decoration: none; color: inherit;">
-                    <img src="pictures/haie-coupéé.webp" class="service-img" alt="une haie taillée">
-                    <div class="service-content">
-                        <div class="badge">Service à la personne</div>
-                        <h3>Taille de Haies</h3>
-                        <p>Taille de formation, d'entretien ou rabattage. Nous assurons la coupe et l'évacuation des déchets.</p>
-                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
-                    </div>
-                </a>
+                <img src="pictures/haie-coupéé.webp" class="service-img" alt="une haie taillée">
+                <div class="service-content">
+                    <div class="badge">Service à la personne</div>
+                    <h3>Taille de Haies</h3>
+                    <ul class="service-list">
+                        <li>Tailles de formation (jeunes haies)</li>
+                        <li>Taille d'entretien annuelle</li>
+                        <li>Rabattage de haies imposantes</li>
+                        <li>Sculpture d'arbustes d'ornement</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="service-card">
-                <a href="elagage.html" style="text-decoration: none; color: inherit;">
-                    <img src="pictures/arbre-elagage.webp" class="service-img" alt="arbre en cours d'élagage">
-                    <div class="service-content">
-                        <div class="badge">Accès difficile</div>
-                        <h3>Élagage & Abattage</h3>
-                        <p>Intervention en hauteur ou non, sécurisée pour élaguer, démonter ou abattre vos arbres, même dangereux.</p>
-                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
-                    </div>
-                </a>
+                <img src="pictures/arbre-elagage.webp" class="service-img" alt="arbre en cours d'élagage">
+                <div class="service-content">
+                    <div class="badge">Accès difficile</div>
+                    <h3>Élagage</h3>
+                    <ul class="service-list">
+                        <li>Taille sanitaire et d'entretien</li>
+                        <li>Élagage toutes hauteurs</li>
+                        <li>Mise en sécurité (branches mortes)</li>
+                        <li>Évacuation des déchets verts</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="service-card">
-                <a href="debroussaillage.html" style="text-decoration: none; color: inherit;">
-                    <img src="pictures/debroussaillage.webp" class="service-img" alt="Débroussaillage terrain">
-                    <div class="service-content">
-                        <div class="badge">Gros travaux</div>
-                        <h3>Débroussaillage</h3>
-                        <p>Remise en état de terrains en friche, nettoyage de sous-bois et fauchage d'herbes hautes.</p>
-                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
-                    </div>
-                </a>
+                <img src="pictures/abattage-arbre.webp" class="service-img img-focus-up" alt="Abattage arbre">
+                <div class="service-content">
+                    <div class="badge">Sécurité</div>
+                    <h3>Abattage</h3>
+                    <ul class="service-list">
+                        <li>Abattage direct ou par démontage</li>
+                        <li>Gestion des arbres dangereux</li>
+                        <li>Rognage de souches</li>
+                        <li>Zone de travail sécurisée</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="service-card">
-                <a href="autres.html" style="text-decoration: none; color: inherit;">
-                    <img src="pictures/sur-toit-apres-nettoyage.webp" class="service-img" alt="Peinture interieure maison">
-                    <div class="service-content">
-                        <div class="badge">Multiservices</div>
-                        <h3>Autres Services</h3>
-                        <p>Nous nous occupons de vos extérieurs et rénovations :</p>
-                        <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-gray); font-size: 15px;">
-                            <li>Nettoyage Toiture & Terrasse</li>
-                            <li>Peinture Intérieure & Extérieure</li>
-                        </ul>
-                        <span style="color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 10px; display: block;">En savoir plus →</span>
-                    </div>
-                </a>
+                <img src="pictures/debroussaillage.webp" class="service-img" alt="Débroussaillage terrain">
+                <div class="service-content">
+                    <div class="badge">Gros travaux</div>
+                    <h3>Débroussaillage</h3>
+                    <ul class="service-list">
+                        <li>Nettoyage de terrains en friche</li>
+                        <li>Fauchage d'herbes hautes et ronces</li>
+                        <li>Entretien de sous-bois</li>
+                        <li>Préparation de terrain pour projet</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="pictures/peinture-piece-interieur.webp" class="service-img" alt="Peinture interieure maison">
+                <div class="service-content">
+                    <div class="badge">Rénovation</div>
+                    <h3>Peinture Intérieure</h3>
+                    <ul class="service-list">
+                        <li>Peinture murs et plafonds</li>
+                        <li>Lessivage et préparation des supports</li>
+                        <li>Peinture sur boiseries et radiateurs</li>
+                        <li>Finitions soignées</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="pictures/mur-exterieur-apres-peinture.webp" class="service-img img-focus-up" alt="Peinture extérieure">
+                <div class="service-content">
+                    <div class="badge">Rénovation</div>
+                    <h3>Peinture Extérieure</h3>
+                    <ul class="service-list">
+                        <li>Peinture de façades et murets</li>
+                        <li>Traitement et peinture de boiseries</li>
+                        <li>Peinture portails et ferronneries</li>
+                        <li>Protection contre les intempéries</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="pictures/toit-apres-nettoyage-autre-angle.webp" class="service-img img-focus-up-mid" alt="Nettoyage Toiture">
+                <div class="service-content">
+                    <div class="badge">Multiservices</div>
+                    <h3>Nettoyage Toiture</h3>
+                    <ul class="service-list">
+                        <li>Démoussage curatif</li>
+                        <li>Application de produit hydrofuge</li>
+                        <li>Nettoyage des gouttières</li>
+                        <li>Inspection visuelle des tuiles</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="pictures/terrasse-propre.webp" class="service-img" alt="Nettoyage terrasse">
+                <div class="service-content">
+                    <div class="badge">Haute Pression</div>
+                    <h3>Nettoyage Terrasse</h3>
+                    <ul class="service-list">
+                        <li>Nettoyage haute pression</li>
+                        <li>Élimination des mousses et lichens</li>
+                        <li>Nettoyage des joints de pavés</li>
+                        <li>Traitement protecteur de surface</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="pictures/taille-grande-haie.webp" class="service-img" alt="Jardin impeccable toute l'année">
+                <div class="service-content">
+                    <div class="badge">Tranquillité</div>
+                    <h3>Contrat Annuel</h3>
+                    <ul class="service-list">
+                        <li>Planning de passages à l'année</li>
+                        <li>Budget lissé (mensualisation)</li>
+                        <li>Priorité sur le planning d'intervention</li>
+                        <li>Jardin propre 365 jours/an</li>
+                    </ul>
+                </div>
             </div>
 
         </div>
+    </section>
+
+    <section id="contact-form" class="section">
+        <div class="section-header">
+            <h2>Contactez-nous</h2>
+            <p>Un projet d'aménagement ? Besoin d'un devis pour de l'entretien ?<br>Romain Gaudefroy vous répond rapidement.</p>
+        </div>
+
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>📍 Adresse Postale</h3>
+                    <p style="font-size: 16px; line-height: 1.6;">
+                        <strong>GAUDEFROY ESPACES VERTS</strong><br>
+                        10 rue Ferdinand Buisson<br>
+                        80480 Salouël
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <h3>📞 Téléphone</h3>
+                    <p style="font-size: 22px; font-weight: 800; color: var(--text-dark);">
+                        <a href="tel:0763429626" style="text-decoration: none; color: inherit;">07 63 42 96 26</a>
+                    </p>
+                    <p style="font-size: 14px; color: var(--text-gray); margin-top: 5px;">Disponible du Lundi au Samedi</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>🚜 Zone d'intervention</h3>
+                    <p>Nous nous déplaçons gratuitement pour les devis dans toute le département de la Somme :</p>
+                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-gray);">
+                        <li>Amiens Métropole</li>
+                        <li>Salouël, Pont-de-Metz, Dury</li>
+                        <li>Boves, Longueau, Camon</li>
+                        <li>Moreuil, Ailly-sur-Noye</li>
+                        <li>Montdidier, Breteuil</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="43b241f8-ba71-4acb-82ad-f96e4ca20c72">
+                    <input type="hidden" name="subject" value="Nouveau Devis - Site Web Gaudefroy">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <div class="form-group">
+                        <label for="name">Votre Nom & Prénom *</label>
+                        <input type="text" id="name" name="name" required placeholder="Ex: Jean Dupont">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Ex: 06 12 34 56 78">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse Email</label>
+                        <input type="email" id="email" name="email" placeholder="Ex: jean.dupont@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Type de demande *</label>
+                        <select id="service" name="service">
+                            <option value="Devis Général">Demande de Devis Gratuit</option>
+                            <option value="Entretien/Tonte">Entretien / Tonte (Contrat)</option>
+                            <option value="Taille de Haies">Taille de Haies</option>
+                            <option value="Élagage/Abattage">Élagage / Abattage</option>
+                            <option value="Débroussaillage">Débroussaillage</option>
+                            <option value="Autre">Autre demande</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin (surface approximative, type de travaux, adresse du chantier...)"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Envoyer ma demande</button>
+                    <p style="font-size: 12px; color: #9ca3af; margin-top: 10px; text-align: center;">* Champs obligatoires. Vos données restent confidentielles.</p>
+                </form>
+            </div>
+
+        </div> 
     </section>
 
     <section class="section section-alt">
@@ -285,11 +448,24 @@
             </div>
             <div class="split-image">
                 <img src="pictures/paysagiste-romain-g.webp" alt="Romain Gaudefroy Paysagiste Amiens">
-                <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-gray); font-size: 15px;">
+            </div>
+        </div>
+
+        <div class="split-section">
+            <div class="split-image">
+                <img src="pictures/credit-impots.webp" alt="info 50% crédit d'impôts services à la personne">
+            </div>
+            
+            <div class="split-content">
+                <h2>Le Saviez-vous ?</h2>
+                <p>La taille de haies entre dans le cadre des <strong>Services à la Personne</strong>.</p>
+                <p style="margin-top: 15px;">Cela signifie que si vous êtes un particulier, vous pouvez déduire <strong>50% du montant de la facture</strong> de vos impôts (crédit d'impôt immédiat).</p>
+                <a href="contact.html" class="btn-secondary" style="margin-top: 20px;">Contactez-nous pour en savoir plus</a>
             </div>
         </div>
     </section>
 
+    
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -306,14 +482,6 @@
                 </p>
             </div>
             
-            <div class="footer-section">
-                <h4>Nos Services</h4>
-                <a href="entretien.html">Entretien & Tonte</a>
-                <a href="taille.html">Taille de Haies</a>
-                <a href="elagage.html">Élagage & Abattage</a>
-                <a href="debroussaillage.html">Débroussaillage</a>
-                <a href="autres.html">Autres Services</a> </div>
-
             <div class="footer-section">
                 <h4>Informations</h4>
                 <a href="index.html">Accueil</a>
