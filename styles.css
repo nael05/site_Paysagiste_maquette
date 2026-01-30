@@ -400,6 +400,10 @@ nav {
     object-position: 75% 20%;
 }
 
+.img-focus-up-centre {
+    object-position: 75% 60%;
+}
+
 .img-focus-up-up {
     object-position: 75% 0%;
 }
