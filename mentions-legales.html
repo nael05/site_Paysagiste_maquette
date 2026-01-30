@@ -2,11 +2,9 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="32x32" href="logo-gaudefroy-espaces-verts.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo-gaudefroy-espaces-verts.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentions Légales | Gaudefroy Espaces Verts</title>
-    <meta name="description" content="Consultez les mentions légales de l'entreprise Gaudefroy Espaces Verts à Salouël. Informations juridiques, hébergement et protection des données.">
+    <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles.css">
     <style>
         .legal-content h3 { color: var(--primary); margin-top: 30px; margin-bottom: 10px; }
@@ -15,6 +13,7 @@
     </style>
 </head>
 <body>
+
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -28,27 +27,19 @@
             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
-                <li class="dropdown">
-                    <a href="#">Nos Services ▾</a>
-                    <div class="dropdown-content">
-                        <a href="entretien.html">Entretien & Tonte</a>
-                        <a href="taille.html">Taille de Haies</a>
-                        <a href="elagage.html">Élagage & Abattage</a>
-                        <a href="debroussaillage.html">Débroussaillage</a>
-                        <a href="autres.html">Autres Services</a>
-                    </div>
-                </li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="section">
-        <div class="section-header">
+    <section class="hero" style="padding: 120px 20px 60px;">
+        <div class="hero-content">
             <h1>Mentions Légales</h1>
         </div>
+    </section>
 
-        <div class="legal-content" style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    <section class="section">
+        <div class="legal-content" style="max-width: 800px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
             
             <h3>1. Édition du site</h3>
             <p>Le présent site internet est édité par l'entreprise <strong>Gaudefroy Espaces Verts</strong>.</p>
@@ -64,8 +55,8 @@
 
             <h3>3. Hébergement</h3>
             <p>Le site est hébergé par :<br>
-            <strong>[Nom de l'hébergeur, ex: Hostinger / OVH]</strong><br>
-            [Adresse postale de l'hébergeur]</p>
+            <strong>[Nom de l'hébergeur]</strong><br>
+            [Adresse]</p>
 
             <h3>4. Propriété intellectuelle</h3>
             <p>L'ensemble de ce site (structure, textes, logo, icônes) relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle.</p>
@@ -79,8 +70,20 @@
     </section>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4 style="color: var(--accent-light);">GAUDEFROY ESPACES VERTS</h4>
+                <p>10 rue Ferdinand Buisson<br>80480 Salouël</p>
+                <p style="margin-top: 15px;"><a href="tel:0763429626" style="font-weight: 700; font-size: 1.1em; color: var(--accent-warm);">📞 07 63 42 96 26</a></p>
+            </div>
+            <div class="footer-section">
+                 <h4>Liens</h4>
+                 <a href="index.html">Accueil</a>
+                 <a href="contact.html">Contact</a>
+            </div>
+        </div>
         <div class="footer-bottom">
-            <p>© 2026 Gaudefroy Espaces Verts - Réalisé par NM Web Studio</p>
+            <p>© 2026 Gaudefroy Espaces Verts - Tous droits réservés</p>
         </div>
     </footer>
 

@@ -8,7 +8,6 @@
     <title>Contact & Devis Gratuit | Paysagiste Gaudefroy à Salouël</title>
     <meta name="description" content="Besoin d'un renseignement ou d'un tarif ? Contactez Romain Gaudefroy pour tous vos travaux d'espaces verts à Amiens et dans la Somme. Réponse rapide.">
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
     
@@ -25,24 +24,20 @@
             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="contact.html" style="color: var(--primary);">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <script>
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-    </script>
-
-    <section class="section">
-        <div class="section-header">
+    <section class="hero" style="padding-bottom: 60px;">
+        <div class="hero-content">
             <h1>Contactez-nous</h1>
             <p>Un projet d'aménagement ? Besoin d'un devis pour de l'entretien ?<br>Romain Gaudefroy vous répond rapidement.</p>
         </div>
+    </section>
 
-        <div class="contact-container">
+    <section class="section" style="padding-top: 0;">
+        <div class="contact-container" style="margin-top: -40px; z-index: 10; position: relative;">
             
             <div class="contact-info">
                 <div class="info-item">
@@ -56,7 +51,7 @@
 
                 <div class="info-item">
                     <h3>📞 Téléphone</h3>
-                    <p style="font-size: 22px; font-weight: 800; color: var(--text-dark);">
+                    <p style="font-size: 26px; font-weight: 800; color: var(--primary-dark);">
                         <a href="tel:0763429626" style="text-decoration: none; color: inherit;">07 63 42 96 26</a>
                     </p>
                     <p style="font-size: 14px; color: var(--text-gray); margin-top: 5px;">Disponible du Lundi au Samedi</p>
@@ -64,24 +59,21 @@
 
                 <div class="info-item">
                     <h3>🚜 Zone d'intervention</h3>
-                    <p>Nous nous déplaçons gratuitement pour les devis dans toute le département de la Somme :</p>
-                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-gray);">
-                        <li>Amiens Métropole</li>
-                        <li>Salouël, Pont-de-Metz, Dury</li>
-                        <li>Boves, Longueau, Camon</li>
-                        <li>Moreuil, Ailly-sur-Noye</li>
-                        <li>Montdidier, Breteuil</li>
-                        <li>...</li>
+                    <p>Déplacement gratuit pour les devis dans la Somme :</p>
+                    <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-gray);">
+                        <li>Amiens Métropole & alentours</li>
+                        <li>Salouël, Dury, Pont-de-Metz</li>
+                        <li>Boves, Longueau, Camon, Glisy</li>
+                        <li>Vallée de la Somme...</li>
                     </ul>
                 </div>
             </div>
 
             <div class="contact-form-wrapper">
+                <h3 style="margin-bottom: 25px; color: var(--primary-dark);">Formulaire de demande</h3>
                 <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="43b241f8-ba71-4acb-82ad-f96e4ca20c72">
-                    
-                    <input type="hidden" name="subject" value="Nouveau Devis - Site Web Gaudefroy">
-
+                    <input type="hidden" name="subject" value="Nouveau Devis - Page Contact">
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                     <div class="form-group">
@@ -102,22 +94,23 @@
                     <div class="form-group">
                         <label for="service">Type de demande *</label>
                         <select id="service" name="service">
+                            <option value="">-- Sélectionnez une prestation --</option>
                             <option value="Devis Général">Demande de Devis Gratuit</option>
-                            <option value="Entretien/Tonte">Entretien / Tonte (Contrat)</option>
+                            <option value="Contrat Annuel">Contrat d'Entretien Annuel</option>
                             <option value="Taille de Haies">Taille de Haies</option>
                             <option value="Élagage/Abattage">Élagage / Abattage</option>
-                            <option value="Débroussaillage">Débroussaillage</option>
+                            <option value="Tonte">Tonte de pelouse</option>
                             <option value="Autre">Autre demande</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="message">Votre Message *</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin (surface approximative, type de travaux, adresse du chantier...)"></textarea>
+                        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin (surface approx., type de travaux, adresse du chantier...)"></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Envoyer ma demande</button>
-                    <p style="font-size: 12px; color: #9ca3af; margin-top: 10px; text-align: center;">* Champs obligatoires. Vos données restent confidentielles.</p>
+                    <button type="submit" class="submit-btn">Obtenir mon devis gratuit</button>
+                    <p style="font-size: 13px; color: var(--text-gray); margin-top: 15px; text-align: center;">* Champs obligatoires. Réponse sous 24/48h.</p>
                 </form>
             </div>
 
@@ -127,29 +120,36 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>GAUDEFROY ESPACES VERTS</h4>
+                <h4 style="color: var(--accent-light);">GAUDEFROY ESPACES VERTS</h4>
                 <p>10 rue Ferdinand Buisson<br>80480 Salouël</p>
-                <p> <a href="tel:0763429626">📞 07 63 42 96 26</a></p>
-                <p> <a href="contact.html">✉️ Nous contacter</a></p>
+                <p style="margin-top: 15px;"><a href="tel:0763429626" style="font-weight: 700; font-size: 1.1em; color: var(--accent-warm);">📞 07 63 42 96 26</a></p>
+                <p><a href="contact.html">✉️ Nous contacter par email</a></p>
             </div>
 
             <div class="footer-section">
                 <h4>Zone d'Intervention</h4>
-                <p style="font-size: 14px; line-height: 1.6;">
-                    Département de la Somme : Amiens, Salouël, Boves, Moreuil, Montdidier, Ailly-sur-Noye, Breteuil, Camon, Longueau, Dury...
+                <p style="font-size: 14px; line-height: 1.6; opacity: 0.9;">
+                    Intervention rapide dans toute la Somme (80) : Amiens Métropole, Salouël, Boves, Moreuil, Montdidier, Ailly-sur-Noye, Breteuil, Camon, Longueau, Dury, Corbie...
                 </p>
             </div>
             
             <div class="footer-section">
-                <h4>Informations</h4>
+                <h4>Liens Utiles</h4>
                 <a href="index.html">Accueil</a>
+                <a href="index.html#services">Nos Prestations</a>
                 <a href="contact.html">Demander un Devis</a>
-                <a href="mentions-legales.html">Mentions Légales</a>
+                <a href="mentions-legales.html" style="font-size: 0.9em; opacity: 0.8;">Mentions Légales</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Gaudefroy Espaces Verts - Tous droits réservés</p>
+            <p>© 2026 Gaudefroy Espaces Verts | Paysagiste à Salouël & Amiens - Tous droits réservés</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
