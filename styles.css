@@ -69,7 +69,7 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
-    height: 100px; /* Agrandissement de la barre (était 80px) */
+    height: 120px; /* Agrandissement à 120px */
     border-bottom: 3px solid var(--accent-gold);
     transition: transform 0.4s ease-in-out;
 }
@@ -88,37 +88,37 @@ nav.nav-hidden {
     height: 100%;
 }
 
-.logo { display: flex; align-items: center; gap: 15px; }
+.logo { display: flex; align-items: center; gap: 20px; }
 
-/* MODIFICATION : LOGO PLUS GRAND */
+/* LOGO ENCORE PLUS GRAND */
 .logo img { 
-    height: 80px; /* Était 60px */
+    height: 100px; /* Passé à 100px */
     width: auto; 
     border-radius: 50%; 
     object-fit: cover; 
-    border: 2px solid var(--primary); 
+    border: 3px solid var(--primary); 
 }
 
-/* MODIFICATION : NOM PLUS GRAND */
+/* NOM ENCORE PLUS GRAND */
 .logo span { 
     font-family: var(--font-heading); 
-    font-size: 24px; /* Était 18px */
+    font-size: 28px; /* Passé à 28px */
     font-weight: 900; 
     color: var(--primary); 
     text-transform: uppercase; 
     line-height: 1.1; 
     display: flex; 
     flex-direction: column; 
-    letter-spacing: 0.5px; 
+    letter-spacing: 1px; 
 }
 
 .nav-links { display: flex; gap: 35px; list-style: none; height: 100%; align-items: center; }
-.nav-links a { font-weight: 700; font-size: 16px; color: var(--text-gray); position: relative; padding: 5px 0; }
+.nav-links a { font-weight: 700; font-size: 17px; color: var(--text-gray); position: relative; padding: 5px 0; }
 .nav-links a::after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background-color: var(--accent-warm); transition: width 0.3s; border-radius: 2px; }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 .nav-links a:hover { color: var(--accent-warm); }
 
-.nav-cta { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 50px; font-weight: 700; font-size: 15px; box-shadow: var(--shadow-sm); }
+.nav-cta { background: var(--primary); color: white !important; padding: 14px 28px; border-radius: 50px; font-weight: 700; font-size: 16px; box-shadow: var(--shadow-sm); }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: var(--primary-dark); }
 
 /* --- BOUTON RETOUR HAUT --- */
@@ -151,7 +151,7 @@ nav.nav-hidden {
 /* --- HERO --- */
 .hero { 
     background: linear-gradient(180deg, #fffaf0 0%, #ffffff 100%); 
-    padding: 180px 20px 100px; /* Augmenté car la nav fait maintenant 100px */
+    padding: 200px 20px 100px; /* Augmenté à 200px pour éviter que le menu cache le texte */
     text-align: center; 
 }
 .hero-content { max-width: 850px; margin: 0 auto; position: relative; z-index: 1; }
@@ -239,8 +239,8 @@ footer { background: var(--primary-dark); color: #e7e5e4; padding: 80px 20px 30p
     .nav-container { padding: 0 15px; }
     .hamburger { display: block; font-size: 30px; cursor: pointer; color: var(--primary); }
     
-    /* MODIFICATION : Top ajusté à 100px car la nav est plus grande */
-    .nav-links { display: none; position: absolute; top: 100px; left: 0; width: 100%; background: var(--white); flex-direction: column; padding: 30px 0; box-shadow: var(--shadow-lg); z-index: 2000; height: 100vh; }
+    /* MENU MOBILE AJUSTÉ POUR LA BARRE DE 120PX */
+    .nav-links { display: none; position: absolute; top: 120px; left: 0; width: 100%; background: var(--white); flex-direction: column; padding: 30px 0; box-shadow: var(--shadow-lg); z-index: 2000; height: 100vh; }
     
     .nav-links.active { display: flex; }
     .nav-links a { display: block; padding: 15px 20px; font-size: 1.2rem; }
