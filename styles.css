@@ -197,15 +197,36 @@ nav.nav-hidden {
 }
 
 /* --- HERO IMMERSIF AVEC IMAGE DE FOND --- */
+/* --- HERO IMMERSIF --- */
 .hero { 
-    /* Image sombre en fond (utiliser une de vos images) */
+    /* Image sombre en fond */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pictures/haie-coupéé.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Effet Parallaxe */
+    /* Par défaut, on désactive le fixed pour la compatibilité mobile */
+    background-attachment: scroll; 
     padding: 220px 20px 140px; 
     text-align: center; 
     color: white;
+}
+
+/* On réactive l'effet parallaxe UNIQUEMENT sur les grands écrans (Ordinateurs) */
+@media (min-width: 901px) {
+    .hero {
+        background-attachment: fixed;
+    }
+}
+
+/* Ajustement de la taille du Hero sur mobile pour mieux voir l'image */
+@media (max-width: 900px) {
+    .hero {
+        padding: 180px 20px 80px;
+        background-attachment: scroll !important; /* Force l'affichage normal sur mobile */
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem; /* Titre un peu plus petit sur mobile */
+    }
 }
 
 .hero-content { max-width: 850px; margin: 0 auto; position: relative; z-index: 1; }
