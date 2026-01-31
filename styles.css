@@ -200,7 +200,7 @@ nav.nav-hidden {
 /* --- HERO IMMERSIF --- */
 .hero { 
     /* Image sombre en fond */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pictures/haie-coupéé.webp');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pictures/haie-coupee.webp');
     background-size: cover;
     background-position: center;
     /* Par défaut, on désactive le fixed pour la compatibilité mobile */
