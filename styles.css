@@ -139,7 +139,7 @@ nav.nav-hidden {
 /* --- BOUTON RETOUR HAUT --- */
 #backToTop {
     position: fixed;
-    bottom: 90px; /* Au dessus de la barre mobile */
+    bottom: 90px; 
     right: 30px;
     background-color: var(--accent-btn);
     color: white;
@@ -164,7 +164,7 @@ nav.nav-hidden {
 #backToTop.show-btn { opacity: 1; visibility: visible; transform: translateY(0); }
 
 @media (min-width: 900px) {
-    #backToTop { bottom: 30px; } /* Retour en bas sur ordi */
+    #backToTop { bottom: 30px; } 
 }
 
 /* --- BARRE D'ACTION MOBILE (STICKY) --- */
@@ -193,40 +193,32 @@ nav.nav-hidden {
 .btn-quote { background-color: var(--accent-warm); }
 
 @media (min-width: 900px) {
-    .mobile-sticky-bar { display: none; } /* Caché sur ordi */
+    .mobile-sticky-bar { display: none; } 
 }
 
-/* --- HERO IMMERSIF AVEC IMAGE DE FOND --- */
 /* --- HERO IMMERSIF --- */
 .hero { 
-    /* Image sombre en fond */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pictures/haie-coupee.webp');
     background-size: cover;
     background-position: center;
-    /* Par défaut, on désactive le fixed pour la compatibilité mobile */
     background-attachment: scroll; 
     padding: 220px 20px 140px; 
     text-align: center; 
     color: white;
 }
 
-/* On réactive l'effet parallaxe UNIQUEMENT sur les grands écrans (Ordinateurs) */
 @media (min-width: 901px) {
     .hero {
         background-attachment: fixed;
     }
 }
 
-/* Ajustement de la taille du Hero sur mobile pour mieux voir l'image */
 @media (max-width: 900px) {
     .hero {
         padding: 180px 20px 80px;
-        background-attachment: scroll !important; /* Force l'affichage normal sur mobile */
+        background-attachment: scroll !important; 
     }
-    
-    .hero h1 {
-        font-size: 2.2rem; /* Titre un peu plus petit sur mobile */
-    }
+    .hero h1 { font-size: 2.2rem; }
 }
 
 .hero-content { max-width: 850px; margin: 0 auto; position: relative; z-index: 1; }
@@ -234,13 +226,13 @@ nav.nav-hidden {
 .hero h1 { 
     font-size: 3.8rem; 
     margin-bottom: 24px; 
-    color: #ffffff; /* Texte Blanc */
+    color: #ffffff; 
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero p { 
     font-size: 1.4rem; 
-    color: #f3f4f6; /* Blanc cassé */
+    color: #f3f4f6; 
     margin-bottom: 40px; 
     max-width: 700px; 
     margin-left: auto; 
@@ -294,21 +286,23 @@ nav.nav-hidden {
 .split-content h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 25px; }
 .split-image img { width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg); border: 8px solid var(--white); }
 
-/* --- CARROUSEL DES SERVICES --- */
-.carousel-container { position: relative; max-width: 1200px; margin: 0 auto; padding: 20px 0; }
-.carousel-track-container { overflow: hidden; padding: 10px; margin: 0 50px; }
-.carousel-track { display: flex; transition: transform 0.4s ease-in-out; list-style: none; padding: 0; margin: 0; }
-.carousel-slide { min-width: 100%; padding: 0 15px; box-sizing: border-box; }
+/* --- GRILLE DES SERVICES --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 0 auto;
+}
 
-@media (min-width: 700px) { .carousel-slide { min-width: 50%; } }
-@media (min-width: 1100px) { .carousel-slide { min-width: 33.333%; } }
+@media (min-width: 700px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
-.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--accent-btn); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: var(--shadow-md); z-index: 10; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; }
-.carousel-btn:hover { background: var(--primary); transform: translateY(-50%) scale(1.1); }
-.prev-btn { left: 0; }
-.next-btn { right: 0; }
+@media (min-width: 1100px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
 
-.service-card { background: var(--white); border-radius: 20px; border: 1px solid var(--border); transition: all 0.4s ease; overflow: hidden; height: 100%; display: flex; flex-direction: column; box-shadow: var(--shadow-sm); cursor: grab; }
+.service-card { background: var(--white); border-radius: 20px; border: 1px solid var(--border); transition: all 0.4s ease; overflow: hidden; height: 100%; display: flex; flex-direction: column; box-shadow: var(--shadow-sm); }
 .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--accent-warm); }
 .service-img { width: 100%; height: 240px; object-fit: cover; transition: transform 0.6s ease; }
 .service-card:hover .service-img { transform: scale(1.08); }
@@ -332,14 +326,11 @@ nav.nav-hidden {
 .contact-info { background: var(--primary); color: white; padding: 50px; border-radius: 20px; box-shadow: var(--shadow-md); border: 1px solid var(--primary-dark); }
 .contact-info h3 { color: var(--accent-gold); margin-bottom: 15px; font-size: 1.4rem; }
 .contact-info p, .contact-info ul li { color: #f0fdf4; font-size: 1.1rem; }
-.contact-info .nav-cta { display: none; }
 .contact-form-wrapper { background: var(--white); padding: 50px; border-radius: 20px; box-shadow: 0 20px 40px rgba(193, 136, 69, 0.08); border: 1px solid var(--border); }
 .form-group { margin-bottom: 25px; }
 .form-group label { display: block; margin-bottom: 10px; font-weight: 700; font-size: 0.95rem; color: var(--text-dark); }
 .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 16px 20px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; background-color: #fafafa; transition: all 0.3s; }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-warm); background-color: var(--white); box-shadow: 0 0 0 4px rgba(193, 136, 69, 0.2); }
 .submit-btn { background: var(--accent-btn); color: white; border: none; width: 100%; padding: 20px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(193, 136, 69, 0.3); transition: all 0.3s; letter-spacing: 1px; text-transform: uppercase; }
-.submit-btn:hover { background: #a16207; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(193, 136, 69, 0.5); }
 
 /* --- FOOTER --- */
 footer { background: var(--primary-dark); color: #e7e5e4; padding: 80px 20px 30px; margin-top: 80px; border-top: 5px solid var(--accent-warm); }
@@ -354,20 +345,13 @@ footer { background: var(--primary-dark); color: #e7e5e4; padding: 80px 20px 30p
 @media (max-width: 900px) {
     .nav-container { padding: 0 15px; }
     .hamburger { display: block; font-size: 30px; cursor: pointer; color: var(--primary); }
-    
-    /* MENU MOBILE AJUSTÉ POUR LA BARRE DE 120PX */
     .nav-links { display: none; position: absolute; top: 120px; left: 0; width: 100%; background: var(--white); flex-direction: column; padding: 30px 0; box-shadow: var(--shadow-lg); z-index: 2000; height: 100vh; }
-    
     .nav-links.active { display: flex; }
     .nav-links a { display: block; padding: 15px 20px; font-size: 1.2rem; }
     .nav-cta { display: none; } 
     .hero h1 { font-size: 2.5rem; }
     .split-section, .contact-container { grid-template-columns: 1fr; }
     .split-image { order: -1; } 
-    .contact-info, .contact-form-wrapper { padding: 30px; }
-    .carousel-track-container { margin: 0; }
-    .carousel-btn { width: 35px; height: 35px; font-size: 18px; opacity: 0.9; }
-    .prev-btn { left: 5px; } .next-btn { right: 5px; }
 }
 
 /* --- REGLAGES IMAGES --- */
