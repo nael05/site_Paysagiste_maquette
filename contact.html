@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <nav>
+    <nav id="mainNav">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="logo-gaudefroy-espaces-verts.png" alt="logo gaudefroy espaces verts.png">
@@ -29,15 +29,22 @@
         </div>
     </nav>
 
+    <button id="backToTop" title="Retour en haut">↑</button>
+
+    <div class="mobile-sticky-bar">
+        <a href="tel:0763429626" class="sticky-btn btn-call">📞 Appeler</a>
+        <a href="contact.html" class="sticky-btn btn-quote">📝 Devis Gratuit</a>
+    </div>
+
     <section class="hero" style="padding-bottom: 60px;">
-        <div class="hero-content">
+        <div class="hero-content animate-on-scroll">
             <h1>Contactez-nous</h1>
             <p>Un projet d'aménagement ? Besoin d'un devis pour de l'entretien ?<br>Romain Gaudefroy vous répond rapidement.</p>
         </div>
     </section>
 
     <section class="section" style="padding-top: 0;">
-        <div class="contact-container" style="margin-top: -40px; z-index: 10; position: relative;">
+        <div class="contact-container animate-on-scroll" style="margin-top: -40px; z-index: 10; position: relative;">
             
             <div class="contact-info">
                 <div class="info-item">
@@ -70,13 +77,13 @@
 
                 <div class="social-links-container" style="display: flex; gap: 15px; margin-top: 25px;">
                     <a href="https://www.facebook.com/61571899700760/" target="_blank" class="social-btn">
-                        <img src="pictures/facebook-logo.webp" alt="Facebook" class="logo-reseaux"style="">
+                        <img src="pictures/facebook-logo.webp" alt="Facebook" class="logo-reseaux">
                     </a>
                     <a href="https://www.instagram.com/rgaudefroy?igsh=d214YzlsZDE5eXNy" target="_blank" class="social-btn">
                         <img src="pictures/logo-instagram.webp" alt="Instagram" class="logo-reseaux">
                     </a>
                     <a href="https://snapchat.com/t/MsGXTz3I" target="_blank" class="social-btn">
-                        <img src="pictures/logo-snapchat.webp" alt="Instagram" class="logo-reseaux">
+                        <img src="pictures/logo-snapchat.webp" alt="Snapchat" class="logo-reseaux">
                     </a>
                 </div>
             </div>
@@ -118,50 +125,97 @@
 
                     <div class="form-group">
                         <label for="message">Votre Message *</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin (surface approx., type de travaux, adresse du chantier...)"></textarea>
+                        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin..."></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Obtenir mon devis gratuit</button>
                     <p style="font-size: 13px; color: var(--text-gray); margin-top: 15px; text-align: center;">* Champs obligatoires. Réponse sous 24/48h.</p>
                 </form>
             </div>
-
         </div> 
     </section>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4 style="color: var(--accent-light);">GAUDEFROY ESPACES VERTS</h4>
+                <h4>GAUDEFROY ESPACES VERTS</h4>
                 <p>10 rue Ferdinand Buisson<br>80480 Salouël</p>
-                <p style="margin-top: 15px;"><a href="tel:0763429626" style="font-weight: 700; font-size: 1.1em; color: var(--accent-warm);">📞 07 63 42 96 26</a></p>
-                <p><a href="contact.html">✉️ Nous contacter par email</a></p>
+                <p style="margin-top: 15px;"><a href="tel:0763429626" style="font-weight: 700; color: var(--accent-glow);">📞 07 63 42 96 26</a></p>
             </div>
-
             <div class="footer-section">
                 <h4>Zone d'Intervention</h4>
-                <p style="font-size: 14px; line-height: 1.6; opacity: 0.9;">
-                    Intervention rapide dans toute la Somme (80) : Amiens Métropole, Salouël, Boves, Moreuil, Montdidier, Ailly-sur-Noye, Breteuil, Camon, Longueau, Dury, Corbie...
-                </p>
+                <p style="font-size: 14px; opacity: 0.9;">Somme (80) : Amiens, Salouël, Boves, Moreuil, Montdidier, Breteuil, Camon, Longueau...</p>
             </div>
-            
             <div class="footer-section">
-                <h4>Liens Utiles</h4>
+                <h4>Liens</h4>
                 <a href="index.html">Accueil</a>
-                <a href="index.html#services">Nos Prestations</a>
-                <a href="contact.html">Demander un Devis</a>
-                <a href="mentions-legales.html" style="font-size: 0.9em; opacity: 0.8;">Mentions Légales</a>
+                <a href="#services">Nos Prestations</a>
+                <a href="contact.html">Contact</a>
+                <a href="mentions-legales.html">Mentions Légales</a>
+            </div>
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links-footer" style="display: flex; gap: 15px; margin-top: 10px;">
+                    <a href="https://www.facebook.com/61571899700760/" target="_blank">
+                        <img src="pictures/facebook-logo.webp" alt="Facebook" class="logo-reseaux"
+                    </a>
+                    <a href="https://www.instagram.com/rgaudefroy?igsh=d214YzlsZDE5eXNy" target="_blank">
+                        <img src="pictures/logo-instagram.webp" alt="Instagram" class="logo-reseaux"
+                    </a>
+                    <a href="https://snapchat.com/t/MsGXTz3I" target="_blank">
+                        <img src="pictures/logo-snapchat.webp" alt="Snapchat" class="logo-reseaux"
+                    </a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Gaudefroy Espaces Verts | Paysagiste à Salouël & Amiens - Tous droits réservés</p>
+            <p>© 2026 Gaudefroy Espaces Verts - Tous droits réservés</p>
         </div>
     </footer>
 
     <script>
+        // LOGIQUE NAVIGATION RÉTRACTABLE ET RETOUR EN HAUT
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
         }
+
+        const nav = document.getElementById('mainNav');
+        const backToTopBtn = document.getElementById('backToTop');
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Navigation rétractable
+            if (scrollTop > lastScrollTop && scrollTop > 120) {
+                nav.classList.add('nav-hidden');
+            } else {
+                nav.classList.remove('nav-hidden');
+            }
+            lastScrollTop = scrollTop;
+
+            // Bouton retour en haut
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show-btn');
+            } else {
+                backToTopBtn.classList.remove('show-btn');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ANIMATIONS D'APPARITION
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
