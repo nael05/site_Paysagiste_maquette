@@ -311,15 +311,33 @@ nav.nav-hidden {
 .service-list li, .split-content ul li { padding: 8px 0; color: var(--text-gray); position: relative; padding-left: 35px; font-size: 1.05rem; list-style: none; }
 .service-list li::before, .split-content ul li::before { content: '✔'; position: absolute; left: 0; top: 6px; height: 24px; width: 24px; background: var(--primary-soft); color: var(--primary); border-radius: 50%; font-size: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; }
 
-/* --- AVIS GOOGLE --- */
+/* --- AVIS GOOGLE (BOUCLE INFINIE) --- */
 .reviews-section { background: linear-gradient(180deg, var(--bg-alt) 0%, #ffffff 100%); padding: 80px 0; overflow: hidden; border-top: 1px solid var(--border); }
 .reviews-header { text-align: center; max-width: 800px; margin: 0 auto 40px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
 .google-badge { display: inline-flex; align-items: center; gap: 10px; font-weight: bold; color: var(--text-dark); background: var(--white); padding: 10px 25px; border-radius: 50px; box-shadow: var(--shadow-sm); font-size: 15px; border: 1px solid var(--border); }
-.reviews-track { display: flex; gap: 30px; width: max-content; animation: scroll 45s linear infinite; padding-left: 30px; }
+
+.reviews-slider {
+    overflow: hidden;
+    width: 100%;
+}
+
+.reviews-track { 
+    display: flex; 
+    gap: 30px; 
+    width: max-content; 
+    animation: scrollLoop 40s linear infinite; /* Animation boucle infinie */
+    padding-left: 30px; 
+}
+
 .reviews-track:hover { animation-play-state: paused; }
+
 .review-card { background: var(--white); border-radius: 16px; padding: 30px; min-width: 340px; max-width: 340px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); }
 .review-stars { color: #d97706; letter-spacing: 2px; }
-@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-340px * 5 - 30px * 5)); } }
+
+@keyframes scrollLoop { 
+    0% { transform: translateX(0); } 
+    100% { transform: translateX(-50%); } /* Déplace de 50% de la largeur totale (si cartes doublées) */
+}
 
 /* --- CONTACT --- */
 .contact-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; margin-top: 40px; }
